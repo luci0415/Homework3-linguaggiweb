@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE negozio SYSTEM "dtd.dtd">
+<negozio>
+  <nome>GamePortal</nome>
+  <utente>
+    <nickname>Emi</nickname>
+    <carrello/>
+  </utente>
+  <utente>
+    <nickname>Lucy</nickname>
+    <carrello/>
+  </utente>
+  <utente>
+    <nickname>Marte</nickname>
+    <carrello/>
+  </utente>
+</negozio>

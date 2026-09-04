@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE utente [
+    <ELEMENT utente (nickname, carrello)>
+        <!ELEMENT nickname (#PCDATA)>
+        <!ELEMENT carrello (videogioco*)>
+            <!ELEMENT videogioco (id, nome, prezzo, piattaforma, materiale)>
+                <!ELEMENT id (#PCDATA)>
+                <!ELEMENT nome (#PCDATA)>
+                <!ELEMENT prezzo (#PCDATA)>
+                <!ELEMENT piattaforma (#PCDATA)>
+                <!ELEMENT materiale (#PCDATA)>
+]>

@@ -1,0 +1,616 @@
+/* ==========================================
+   1. RESET E BASE
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f1015;
+    color: #f1f1f1;
+    padding-top: 70px; /* Spazio per la navbar fissa */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+}
+
+/* ==========================================
+   2. NAVBAR FISSA
+   ========================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #1a1c23;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    gap: 1rem;
+}
+
+.navbar .logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ff4757;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    padding-right: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.nav-links li {
+    flex: 1;
+    height: 100%;
+    display: flex;
+}
+
+.nav-links a {
+    color: #a0a5b5;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    background-color: #242731;
+    border-bottom: 3px solid #ff4757;
+}
+
+.nav-right-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding-left: 1rem;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #262933;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.icon-btn:hover {
+    background-color: #ff4757;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: #ff4757;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    border: 2px solid #1a1c23;
+}
+
+/* ==========================================
+   3. SEZIONI E TITOLI
+   ========================================== */
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #ff4757;
+    padding-left: 0.8rem;
+}
+
+.top3-section {
+    margin-top: 3rem;
+}
+
+/* ==========================================
+   4. GRIGLIE E CARD GIOCHI (CATALOGO)
+   ========================================== */
+.featured-grid, 
+.top-three-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.game-card {
+    background: #1a1c23;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #2a2d37;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 71, 87, 0.25);
+}
+
+.game-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.game-info {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.game-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2ecc71;
+    margin-top: 0.5rem;
+}
+
+.stock-info {
+    font-size: 0.85rem;
+    color: #a0a5b5;
+}
+
+.stock-info.warning {
+    color: #ff4757;
+    font-weight: bold;
+}
+
+/* ==========================================
+   5. BOTTONI FORMATO (FISICO VS DIGITALE)
+   ========================================== */
+.buy-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.buy-actions form {
+    flex: 1;
+}
+
+.btn-format {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Copia Fisica (Stile Blu / Violet) */
+.btn-physical {
+    background: linear-gradient(135deg, #1e2436 0%, #141824 100%);
+    color: #c52c2c;
+    border-color: rgba(0, 210, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-physical:hover {
+    background: #b94040;
+    color: #291e1e;
+    border-color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Copia Digitale (Stile Verde Neon) */
+.btn-digital {
+    background: linear-gradient(135deg, #182c23 0%, #101d17 100%);
+    color: #00ff88;
+    border-color: rgba(0, 255, 136, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-digital:hover {
+    background: #00ff88;
+    color: #0d0e12;
+    border-color: #00ff88;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-format:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+/* ==========================================
+   6. BADGES CLASSIFICA, GENERI E PIATTAFORME
+   ========================================== */
+.rank-badge {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #ff4757;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-bottom: 0.3rem;
+}
+
+.platforms {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+}
+
+.platform-badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.badge-pc { background-color: #00a8ff; }
+.badge-ps5 { background-color: #003791; }
+.badge-xbox { background-color: #107c41; }
+.badge-switch { background-color: #e60012; }
+.badge-switch2 { background-color: #a200ff; }
+
+.badge-rpg { background-color: #8e44ad; }
+.badge-adventure { background-color: #2980b9; }
+.badge-platform { background-color: #d35400; }
+.badge-shooter { background-color: #c0392b; }
+.badge-action { background-color: #16a085; }
+.badge-openworld { background-color: #27ae60; }
+.badge-racing { background-color: #f1c40f; color: #1a1c23; }
+.badge-default { background-color: #7f8c8d; }
+
+.error-msg {
+    color: #ff4757;
+    background: rgba(255, 71, 87, 0.1);
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ff4757;
+    font-weight: bold;
+}
+
+/* ==========================================
+   7. SEZIONE CARRELLO
+   ========================================== */
+.cart-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    border-left: 5px solid #ff4757;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(255, 71, 87, 0.3);
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+}
+
+.cart-item-card {
+    background: linear-gradient(135deg, #1a1c23 0%, #15161c 100%);
+    border: 1px solid #2a2d37;
+    border-radius: 14px;
+    padding: 1.2rem 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+}
+
+.cart-item-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #ff4757;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cart-item-card:hover {
+    border-color: rgba(255, 71, 87, 0.5);
+    transform: translateY(-3px) scale(1.005);
+    box-shadow: 0 12px 25px rgba(255, 71, 87, 0.15);
+}
+
+.cart-item-card:hover::before {
+    opacity: 1;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.cart-item-info h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.cart-item-info .item-meta {
+    font-size: 0.85rem;
+    color: #a0a5b5;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.cart-item-info .item-price {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #2ecc71;
+    margin-top: 0.2rem;
+    text-shadow: 0 0 8px rgba(46, 204, 113, 0.2);
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cart-buttons {
+    display: flex;
+    align-items: center;
+    background-color: #0d0e12;
+    border: 1px solid #2d313e;
+    border-radius: 10px;
+    padding: 0.3rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cart-buttons input[type="submit"],
+.cart-buttons button {
+    background: #242834;
+    color: #ffffff;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.cart-buttons input[type="submit"]:hover,
+.cart-buttons button:hover {
+    background-color: #ff4757;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
+    transform: scale(1.05);
+}
+
+.cart-buttons input[type="submit"]:active,
+.cart-buttons button:active {
+    transform: scale(0.95);
+}
+
+.cart-quantity-display {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #ffffff;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* ==========================================
+   8. SEZIONE CHECKOUT & FORM PAGAMENTO
+   ========================================== */
+.checkout-box {
+    background: linear-gradient(145deg, #1a1c23 0%, #121318 100%);
+    border: 1px solid #2a2d37;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.checkout-box h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #2a2d37;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.checkout-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.checkout-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px dashed #2a2d37;
+}
+
+.checkout-summary span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #a0a5b5;
+    text-transform: uppercase;
+}
+
+.checkout-summary .total-price {
+    color: #2ecc71;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-shadow: 0 0 12px rgba(46, 204, 113, 0.3);
+}
+
+/* BOTTONE CHECKOUT */
+.btn-checkout {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, #ff4757 0%, #e03e4d 100%);
+    color: #ffffff;
+    border: none;
+    padding: 1.1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 0.8rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.35);
+}
+
+.btn-checkout::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(30deg);
+    transition: all 0.6s ease;
+}
+
+.btn-checkout:hover {
+    background: linear-gradient(135deg, #ff5e6c 0%, #ff4757 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(255, 71, 87, 0.55);
+}
+
+.btn-checkout:hover::after {
+    left: 130%;
+}
+
+.btn-checkout:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
+}
+
+/* ==========================================
+   9. RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 0.8rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+    
+    .navbar .logo {
+        font-size: 1.1rem;
+        padding-right: 0.4rem;
+    }
+
+    .container {
+        padding: 1.5rem 0.8rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .cart-item-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .cart-item-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .buy-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

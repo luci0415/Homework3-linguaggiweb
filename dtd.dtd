@@ -1,0 +1,17 @@
+<!-- Struttura DTD per il progetto XML -->
+<!ELEMENT negozio (nome, utente)>
+    <!ELEMENT nome (#PCDATA)>
+    <!ELEMENT utente (nickname, carrello, ricevute?)>
+        <!ELEMENT nickname (#PCDATA)>
+        <!ELEMENT carrello (videogioco)>
+            <!ELEMENT videogioco (id, nome, prezzo, piattaforma, materiale, quantita)>
+                <!ELEMENT id (#PCDATA)>
+                <!ELEMENT prezzo (#PCDATA)>
+                <!ELEMENT piattaforma (#PCDATA)>
+                <!ELEMENT materiale (#PCDATA)>
+                <!ELEMENT quantita (#PCDATA)>
+        <!ELEMENT ricevute (ordine*)>
+            <!ELEMENT ordine (data, metodo_pagamento, nome, cognome, videogioco*)>
+                <!ELEMENT data (#PCDATA)>
+                <!ELEMENT cognome (#PCDATA)>
+                <!ELEMENT metodo_pagamento (#PCDATA)>
