@@ -27,8 +27,11 @@ L'applicazione dovrebbe essere avviata nel seguente modo:
    L'idea è di eseguirlo <b>una sola volta</b>, altrimenti gli elementi vengono duplicati, triplicati...
 3. Una volta eseguito l'"installa" si consiglia all'utente di accedere (in alto a destra) all'area utenti e registrarsi o fare il login. Nel codice 
    di "installa.php", alle righe 20-24 sono presenti degli utenti già registrati e la password associata se si vuole accedere direttamente con uno di quelli.
-4. Una volta fatto l'accesso si può usufruire delle funzionalità del carrello.
+4. Una volta fatto l'accesso si può usufruire delle funzionalità del carrello
 
+github link:
+https://github.com/luci0415/Homework3-linguaggiweb
+https://github.com/isthathim993/homework-3-linguaggi-web
 
 
 
